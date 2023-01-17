@@ -5,11 +5,13 @@ let playerWin = document.querySelector(".player-win")
 let computerWin = document.querySelector(".computer-win")
 let result = document.querySelector(".result")
 
-console.log(restart);
+
 inputs.forEach((el) => {
   el.addEventListener("click", function () {
     const playerSelection = el.value.toLowerCase();
     const computerSelection = getComputerChoice();
+    console.log(computerSelection);
+    console.log(playerSelection);
     game(playerSelection, computerSelection)
   });
 
@@ -31,7 +33,7 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    result.innerHTML = "draw";
+    return result.innerHTML = "draw";
   }
   if (
     (playerSelection === "rock" && computerSelection === "paper") ||
