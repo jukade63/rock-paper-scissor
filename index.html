@@ -1,12 +1,26 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Rock-paper-scissor game</title>
-</head>
-<body>
+  </head>
+  <body>
+    <h1>Rock Paper Scissors</h1>
+    <h2 id="summary"></h2>
+
+    <div>
+      <input type="submit" value="ROCK">
+      <input type="submit" value="PAPER">
+      <input type="submit" value="SCISSORS">
+    </div>
+
+    <h2>Result : <span class="result"></span></h2>
+    <h3>You win : <span class="player-win">0</span></h3>
+    <h3>Computer win : <span class="computer-win">0</span></h3>
+    <button class="restart">Restart</button>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
