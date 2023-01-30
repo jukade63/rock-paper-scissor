@@ -1,4 +1,4 @@
-const inputs = document.querySelectorAll("input");
+const options = Array.from(document.querySelector(".options").children)
 const restart = document.querySelector('.restart')
 let summary = document.getElementById('summary')
 let playerWin = document.querySelector(".player-win")
@@ -6,20 +6,20 @@ let computerWin = document.querySelector(".computer-win")
 let result = document.querySelector(".result")
 
 
-inputs.forEach((el) => {
+options.forEach((el) => {
   el.addEventListener("click", function () {
-    const playerSelection = el.value.toLowerCase();
+    const playerSelection = el.id;
     const computerSelection = getComputerChoice();
-    console.log(computerSelection);
     console.log(playerSelection);
+    console.log(computerSelection);
     game(playerSelection, computerSelection)
   });
 
 });
 
+
 function hideInputs(){
-    inputs.forEach(el=>el.hidden = true)
-    result.parentElement.classList.add("hide")
+    options.forEach(el=>el.hidden = true)
 }
 
 restart.addEventListener('click', function(){
@@ -54,10 +54,12 @@ function game(playerSelection, computerSelection){
     playRound(playerSelection, computerSelection)
     if(playerWin.innerHTML == 5){
         hideInputs()
+        restart.style.display = 'block'
         return summary.innerHTML = 'Congratulations! You win the game'
     }
     if(computerWin.innerHTML == 5){
         hideInputs()
+        restart.style.display = 'block'
         return summary.innerHTML = 'Sorry! You lose the game'
     }
 
